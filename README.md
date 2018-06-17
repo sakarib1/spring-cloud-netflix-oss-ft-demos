@@ -55,7 +55,6 @@ of greeting application localhost ports 8080, 8090, 8100
 ## Failure Modes discussed, demonstrated
 
 - Exceptions
-    - Arbitrary runtime exception
     - Connection refused
     - Socket connect timeout
     - Socket read timeout
@@ -107,14 +106,15 @@ Fortune applications
 
 ### Baseline Configuration
 
-The associated Git repo for this project is [here](https://github.com/pivotal-bill-kable/spring-cloud-netflix-oss-ft-demos-config) 
+The associated Git repo for the Config Server sources external
+configuration is [here](https://github.com/pivotal-bill-kable/spring-cloud-netflix-oss-ft-demos-config) 
 
 Fork it to maintain and/or experiment with your own versions.
 
 ### Configuration Refresh Helper Aliases
 
 Run the following from your forked configuration repo project after
-changing:
+making a change:
 
 - Commit fortune service config and execute bus refresh:
 
@@ -124,6 +124,12 @@ changing:
 
         alias r-greeting='git commit -a -m"update greeting config"; curl -XPOST http://localhost:8080/bus/refresh'
         
+### Rest Operation Http Client Timeouts
+
+Note: The "Ribbon" client timeouts are not dynamically refreshable through
+config server, the greeting app must be restarted if either connect or
+read timeouts are changed.
+
 ## Starting Servers Locally
 
 - Config Server: `CONFIG_REPO_PATH=${YOUR_CONFIG_REPO_PATH} SERVER_PORT=8888 ./gradlew platform-services:config-server:bootRun`
