@@ -126,7 +126,7 @@ changing:
         
 ## Starting Servers Locally
 
-- Config Server: `SERVER_PORT=8888 ./gradlew platform-services:config-server:bootRun`
+- Config Server: `CONFIG_REPO_PATH=${YOUR_CONFIG_REPO_PATH} SERVER_PORT=8888 ./gradlew platform-services:config-server:bootRun`
 - Service Registry: `SERVER_PORT=8761 ./gradlew platform-services:service-registry:bootRun`
 - Hytrix Dashboard: `SERVER_PORT=8586 ./gradlew platform-services:cb-dashboard:bootRun`
 - Turbine: `./gradlew platform-services:turbine:bootRun`
