@@ -25,6 +25,7 @@ Ideally we want to expand to additional scenarios and failure modes.
     - I/O
     - Network
 - Inject multiple failures in order
+- Investigate use of Netflix Chaos Engineering toolset
 
 ## Potential scenarios
 
