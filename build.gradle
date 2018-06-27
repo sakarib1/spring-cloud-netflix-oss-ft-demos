@@ -1,8 +1,9 @@
 buildscript {
+
     ext {
-        springBootVersion = '1.5.13.RELEASE'
-        springCloudVersion = 'Edgware.SR3'
-        springVersion = '4.3.17.RELEASE'
+        springBootVersion = '2.0.3.RELEASE'
+        springCloudVersion = 'Finchley.RELEASE'
+        springVersion = '5.0.7.RELEASE'
     }
 
     repositories {
